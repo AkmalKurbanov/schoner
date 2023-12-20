@@ -1,0 +1,162 @@
+mixin productSlider(title,linkTitle)
+  .product-slider
+    .container
+      .d-flex.align-end.justify-between.mb-20
+        .title.title_h2=title
+        a(href="#").text-black.fz-15.lh-20.td-undrln.h-tdn=linkTitle 
+      .product-slider__wrapper
+        .swiper.scrollbar-slider-js
+          
+          .swiper-wrapper
+            .swiper-slide
+              .product-slider__slide
+                .product-item.p-25.d-flex.flex-column.justify-between.tdn.product-item-js
+                  button.product-item__favorite.btn-reset.cup.h-main.active
+                    .icon.icon_fill 
+                      svg(width="24" height="24")
+                        use(xlink:href='#heart')
+                  a(href="#1").product-item__link 
+                  .product-item__status.status.status_orange.bg-white.ttu.ls-1-6.fz-10.fw-500.lh-16.d-if.align-center.justify-center.pl-10.pr-10.text-center WERBUNG
+                  div
+                    .product-item__img-wrap.d-flex.flex-column.align-center.justify-center.mb-25
+                      .product-item__img
+                        img(src="images/dist/product.webp", alt="product" width="160" height="160") 
+                      .product-item__hidden-img
+                        img.object-contain-img(src="images/dist/product-hidden.webp", alt="product" width="160" height="160") 
+                    
+                      .product-item__hidden-img-list
+                        ul
+                          each list in [1,2,3,4]
+                            li(data-id=list) 
+                              img.object-contain-img(src="images/dist/product-thumb"+list+".webp", alt="")
+
+                    .mb-15.product-item__desc
+                      .fz-12.lh-18.text-gray Nove
+                      .text-black.fz-15.fw-500.lh-20.ttu ARMLEHNSTUHL 
+                      .text-black.fz-15.fw-400.lh-20 in Eisen Mikrofaser 
+                    .product-item__hidden-thumbs.thumbs-js.mt-15.mb-15
+                      ul.d-flex
+                        each thumb in [1,2,3,4]
+                          li(data-id=thumb).pr-5
+                            a(href="#").h-br-bc.d-flex.align-center.justify-center.bg-white 
+                              img.object-contain-img(src="images/dist/product-thumb"+thumb+".webp", alt="")
+
+                  .d-flex.flex-column.justify-between
+
+                    div 
+                      .text-gray.fz-12.lh-18.d-flex.align-center
+                        .icon.icon_fill.icon_fill-gray 
+                          svg(width="16" height="16")
+                            use(xlink:href='#colors')
+                        | Mehr Farben verfügbar
+                      .text-main.fz-14.lh-20 CHF 129.‒
+                      .text-gray.fz-12.lh-18 Kostenloser Versand
+
+            .swiper-slide
+              .product-slider__slide
+                .product-item.p-25.d-flex.flex-column.justify-between.tdn.product-item-js
+                  button.product-item__favorite.btn-reset.cup.h-main
+                    .icon.icon_fill 
+                      svg(width="24" height="24")
+                        use(xlink:href='#heart')
+                  a(href="#").product-item__link
+                  .product-item__status.status.status_orange.bg-white.ttu.ls-1-6.fz-10.fw-500.lh-16.d-if.align-center.justify-center.pl-10.pr-10.text-center WERBUNG
+                  .product-item__img-wrap.d-flex.flex-column.align-center.justify-center.mb-25
+                    .product-item__img
+                      img.object-contain-img(src="images/dist/product.webp", alt="product" width="160" height="160") 
+                    .product-item__hidden-img
+                      img.object-contain-img(src="images/dist/product-hidden.webp", alt="product" width="160" height="160") 
+                  
+                  .d-flex.flex-column.justify-between
+                    .mb-15
+                      .fz-12.lh-18.text-gray Nove
+                      .text-black.fz-15.fw-500.lh-20.ttu ARMLEHNSTUHL 
+                      .text-black.fz-15.fw-400.lh-20 in Eisen Mikrofaser 
+
+                    div 
+                      s.text-gray.fz-12.lh-18 statt CHF 199.‒
+                      .text-balck.fz-14.lh-20 CHF 129
+                        sup .80
+                      .text-gray.fz-12.lh-18 Kostenloser Versand
+            
+            .swiper-slide
+              .product-slider__slide
+                .product-item.p-25.d-flex.flex-column.justify-between.tdn.product-item-js
+                  button.product-item__favorite.btn-reset.cup.h-main
+                    .icon.icon_fill 
+                      svg(width="24" height="24")
+                        use(xlink:href='#heart')
+                  a(href="#").product-item__link
+                  .product-item__status.status.status_orange.bg-white.ttu.ls-1-6.fz-10.fw-500.lh-16.d-if.align-center.justify-center.pl-10.pr-10.text-center WERBUNG
+                  .product-item__img-wrap.d-flex.flex-column.align-center.justify-center.mb-25
+                    .product-item__img
+                      img.object-contain-img(src="images/dist/product.webp", alt="product" width="160" height="160") 
+                    
+                  .d-flex.flex-column.justify-between
+                    .mb-15
+                      .fz-12.lh-18.text-gray Nove
+                      .text-black.fz-15.fw-500.lh-20.ttu ARMLEHNSTUHL 
+                      .text-black.fz-15.fw-400.lh-20 in Eisen Mikrofaser 
+
+                    div 
+                      s.text-gray.fz-12.lh-18 statt CHF 199.‒
+                      .text-balck.fz-14.lh-20 CHF 129
+                        sup .80
+                      .text-gray.fz-12.lh-18 Kostenloser Versand
+            
+            each item in [1,2,3,4,5,6]
+              .swiper-slide
+                .product-slider__slide
+                  .product-item.p-25.d-block.tdn.product-item-js
+                    button.product-item__favorite.btn-reset.cup.h-main
+                      .icon.icon_fill 
+                        svg(width="24" height="24")
+                          use(xlink:href='#heart')
+                    a(href="#").product-item__link
+                    .product-item__status.status.status_orange.bg-white.ttu.ls-1-6.fz-10.fw-500.lh-16.d-if.align-center.justify-center.pl-10.pr-10.text-center WERBUNG
+                    .product-item__img-wrap.d-flex.flex-column.align-center.justify-center.mb-25
+                      .product-item__img
+                        img.object-contain-img(src="images/dist/product.webp", alt="product" width="160" height="160") 
+                      .product-item__hidden-img
+                        img.object-contain-img(src="images/dist/product-hidden.webp", alt="product" width="160" height="160") 
+                    
+                    .d-flex.flex-column.justify-between
+                      .mb-15
+                        .fz-12.lh-18.text-gray Nove
+                        .text-black.fz-15.fw-500.lh-20.ttu ARMLEHNSTUHL 
+                        .text-black.fz-15.fw-400.lh-20 in Eisen Mikrofaser 
+
+                      div 
+                        s.text-gray.fz-12.lh-18 statt CHF 199.‒
+                        .text-main.fz-14.lh-20 CHF 129.‒
+                        .text-gray.fz-12.lh-18 Kostenloser Versand
+            .swiper-slide
+              .product__slide
+                a(href="#").product-item.product-item_more.p-25.d-block.tdn
+                  .product-item__more.text-center.text-black.fz-15.fw-500.lh-20.w100p.h100p.h-main.d-flex.align-center.justify-center Weitere Black Shopping Deals
+                  .product-item__status.status.status_orange.text-black.bg-white.ttu.ls-1-6.fz-10.fw-500.lh-16.d-if.align-center.justify-center.pl-10.pr-10.text-center WERBUNG
+                  .product-item__img.d-flex.align-center.justify-center.mb-25
+                    img(src="images/dist/product.webp", alt="product" width="160" height="160") 
+
+                  .d-flex.flex-column.justify-between
+                    .mb-15
+                      .fz-12.lh-18.text-gray Nove
+                      .text-black.fz-15.fw-500.lh-20.ttu ARMLEHNSTUHL 
+                      .text-black.fz-15.fw-400.lh-20 in Eisen Mikrofaser 
+
+                    div 
+                      s.text-gray.fz-12.lh-18 statt CHF 199.‒
+                      .text-main.fz-14.lh-20 CHF 129.‒
+                      .text-gray.fz-12.lh-18 Kostenloser Versand
+
+          .swiper-scrollbar.mt-20
+
+        .swiper-button-prev.product-slider__nav-btn.product-slider__nav-btn_prev.d-flex.align-center.justify-center.transition
+          .icon.icon_fill.icon_fill-black  
+            svg(width="14" height="14")
+              use(xlink:href='#angle')
+      
+        .swiper-button-next.product-slider__nav-btn.product-slider__nav-btn_next.d-flex.align-center.justify-center.transition
+          .icon.icon_fill.icon_fill-black
+            svg(width="14" height="14")
+              use(xlink:href='#angle')

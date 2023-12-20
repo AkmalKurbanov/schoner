@@ -1,0 +1,17 @@
+mixin offers(title)
+  .offers
+    .container
+      .title.title_h1.fw-500.mb-15=title
+      .offers__wrap.d-flex.flex-wrap.justify-between
+        each item, index in ['Jetzt sparen','Herbst-Feeling <br> Gemütliche Abende vor dem Kamin','Alles fürs <br> Familienfest Gäste zu Besuch','Wellness für Zuhause <br> Entspannt durch den Winter']
+          a(href="#").offers__item.offers__item_short.d-flex.align-end.tdn.mb-30.p-25.pos-r
+            img.object-cover-img(src="images/dist/offer"+(index + 1)+".webp", alt="")
+
+            .offers__desc.d-flex.align-end.justify-between.pos-r.w100p
+              .text-white.fz-20.lh-24.fw-600.ls-0-1!=item
+              .icon.radius-100.bg-white 
+                svg(width="16" height="16")
+                  use(xlink:href='#arrow') 
+      p.fz-10.mt-15 1) siehe 
+        a(href="#").text-black.h-tdn.fw-500 Aktionsbedingungen
+

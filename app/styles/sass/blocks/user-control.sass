@@ -1,0 +1,66 @@
+.user-control
+  &__count
+    width: rem(16)
+    height: rem(16)
+    border-radius: 100%
+    overflow: hidden
+    position: absolute
+    right: rem(-6)
+    top: rem(-4)
+
+  &__item
+    padding: rem(25) rem(8)
+    cursor: pointer
+    position: relative
+
+    &:hover
+      .user-control__dropdown
+        display: block
+
+    .icon
+      position: relative
+
+  &__dropdown
+    position: absolute
+    min-width: rem(455)
+    width: 100%
+    right: 0
+    top: 100%
+    cursor: default
+    display: none
+
+    &_profile
+      &.open
+        display: block
+
+  &__profile-list
+    ul
+      &:last-child
+        margin-bottom: 0!important
+      li
+        .icon.angle
+          transform: rotate(-90deg)
+
+        &:last-child
+          margin-bottom: 0!important
+
+        a
+          letter-spacing: rem(.3)
+
+  &__products-list
+    max-height: rem(395)
+
+  &__products-item
+    border-bottom: rem(1) solid $lgc
+
+    &:first-child
+      padding-top: rem(10)!important
+
+  &__products-img
+    position: relative
+    max-width: rem(83)
+    min-width: rem(83)
+    height: rem(83)
+    border: rem(1) solid $lgc
+
+    

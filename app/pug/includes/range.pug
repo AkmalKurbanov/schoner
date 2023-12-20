@@ -1,0 +1,18 @@
+script(src='https://code.jquery.com/jquery-3.6.0.js')
+script(src='https://code.jquery.com/ui/1.13.2/jquery-ui.js')
+script.
+
+  $( ".filter__item-range" ).each(function( index ) {
+  $(this).find('.slider-range').slider({
+  range: true,
+  min: 0,
+  max: 500,
+  values: [ 75, 300 ],
+  slide: function( event, ui ) {
+  $( ".amount1" ).val( ui.values[ 0 ] );
+  $( ".amount2" ).val( ui.values[ 1 ] );
+  }
+  });
+  $( ".amount1" ).val( $(this).find('.slider-range').slider( "values", 0 ) );
+  $( ".amount2" ).val( $(this).find('.slider-range').slider( "values", 1 ) );
+  });

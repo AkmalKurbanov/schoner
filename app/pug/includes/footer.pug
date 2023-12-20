@@ -1,0 +1,93 @@
+.useful-links
+  .container
+    .useful-links__wrap.d-flex.justify-between
+      div 
+        .title.title_h4.text-black.ls-0-1.mb-15 Einkaufen bei XXXLutz
+        ul
+          each link in ['Mein Konto','Online Bestellung','Reklamation','Lieferung','Häufig gestellte Fragen (FAQ)','Zahlung','Versand','Aktionsbedingungen']
+            li.mb-10
+              a(href="#").fz-14.text-black.lh-21.tdn.h-undrln=link
+      div 
+        .title.title_h4.text-black.ls-0-1.mb-15 Service
+        ul
+          each link in ['Auftragsstatusabfrage','XXXL Service','Premiumcard','Transporter','Montage','Click & Collect','Newsletter','Babykarte']
+            li.mb-10
+              a(href="#").fz-14.text-black.lh-21.tdn.h-undrln=link
+      
+      div 
+        .title.title_h4.text-black.ls-0-1.mb-15 Filiale & Standort
+        ul
+          each link in ['Filialfinder','Filialschnäppchen','Prospekte','Restaurant','Küchenberatung']
+            li.mb-10
+              a(href="#").fz-14.text-black.lh-21.tdn.h-undrln=link
+      
+      div 
+        .title.title_h4.text-black.ls-0-1.mb-15 Über Uns
+        ul
+          each link in ['Jobs & Karriere','Unternehmen','XXXL Markenwelt','XXXL Kodex','Pressecenter']
+            li.mb-10
+              a(href="#").fz-14.text-black.lh-21.tdn.h-undrln=link
+
+.help-contacts.pb-15
+  .container
+    .d-flex.justify-between
+      div
+        .title.title_h4.text-black.ls-0-1.mb-20 Hilfe & Kontakt 
+        .footer-btn.d-flex
+          .footer-btn__item       
+            a(href="#").btn.btn_secondary
+              | Zum Kontaktformular 
+              .icon.icon_fill.ml-5
+                svg(width="22" height="22")
+                  use(xlink:href='#chat')
+
+            p.text-gray.fz-12.lh-18.mt-10 Kontaktieren Sie uns persönlich.
+          
+          .footer-btn__item
+            a(href="#").btn.btn_bordered-dark
+              | Häufig gestellte Fragen
+              .icon.icon_fill.ml-5
+                svg(width="22" height="22")
+                  use(xlink:href='#question-circle')
+            p.text-gray.fz-12.lh-18.mt-10 In unseren FAQ's finden Sie sofort Hilfe.
+          
+      div
+        .title.title_h4.text-black.ls-0-1.mb-15 Versandpartner
+        .img-footer.d-flex 
+          each item in [1,2] 
+            a(href="#").img-footer__item.d-flex.align-center.justify-center.pos-r.mr-25
+              img(src="images/dist/partner"+item+".webp", alt="").object-contain-img
+            
+      div
+        .title.title_h4.text-black.ls-0-1.mb-15 Zahlungsmöglichkeiten
+        .img-footer.d-flex 
+          each item in [1,2,3,4] 
+            a(href="#").img-footer__item.d-flex.align-center.justify-center.pos-r.mr-15
+              img(src="images/dist/payment-system"+item+".webp", alt="").object-contain-img
+            
+    p.text-gray.fz-12.lh-18.mt-10.mt-50 Alle Preise sind Abholpreise in CHF.
+
+.footer.pt-15.pb-15
+  .container 
+    .d-flex.align-center.justify-between  
+      .d-flex.align-center  
+        a.footer__logo(href='#')
+          img(src='images/dist/logo.svg' alt='logo' width='82' height='63')
+
+        p.fz-12.text-black.fw-500.lh-18 © 2023 SCHONER
+
+      ul.footer__links
+        each item in ['Impressum','AGB','Datenschutz','Cookie-Einstellungen']
+          li.mr-25
+            a(href="#").fz-10.fw-500.text-black.text-uppercase.tdn.h-undrln=item   
+
+      .social 
+        ul 
+          each item in ['telegram','twitter','whatsapp','instagram','facebook','linkedIn','youtube','pinterest','tiktok']
+            li
+              a(href="#")
+                .icon.icon_stroke
+                  svg(width="24" height="24")
+                    use(xlink:href='#'+item)  
+
+

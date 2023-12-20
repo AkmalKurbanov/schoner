@@ -1,0 +1,93 @@
+.filter
+  position: fixed
+  top: 0
+  bottom: 0
+  right: 0
+  max-width: rem(440)
+  width: 100%
+  z-index: 99
+  transition: $tr
+
+  &__top,
+  &__bottom
+    padding: rem(25) rem(30)
+
+  &__top
+    border-bottom: rem(1) solid $lgc
+
+  &__close
+    max-width: rem(40)
+    min-width: rem(40)
+    width: 100%
+    height: rem(40)
+
+  &__list
+    height: calc( 100% - 190px )
+    overflow-y: auto
+
+  &__item
+    border-bottom: rem(1) solid $lgc
+
+    &.open
+      .angle
+        transform: rotate(180deg)
+
+    .check-box-wrap
+      &_border
+        .check-box
+          border: none
+
+          input
+            &:checked
+              ~
+                .icon
+                  &::after
+                    opacity: 1
+          .icon
+            width: rem(20)
+            height: rem(20)
+            position: relative
+            svg
+              stroke: $bc
+
+            &::after
+              position: absolute
+              content: ''
+              width: calc( 100% + 4px )
+              height: calc( 100% + 4px )
+              border: rem(2) solid $bc
+              border-radius: rem(6)
+              opacity: 0
+              transition: $tr  
+        
+        &:hover
+          .icon
+            opacity: 1
+            &::after
+              opacity: 1
+
+      &:last-child
+        margin-bottom: 0!important    
+        
+      &_dark
+        .icon
+          svg
+            stroke: $wc!important
+
+      
+        
+  &__item-heading
+    padding: rem(20) rem(30)
+    cursor: pointer
+
+    .icon
+      transition: $tr
+
+  &__item-content
+    padding: rem(8) rem(30) rem(24)
+    display: none
+
+  &.open
+    opacity: 1
+    right: 0
+    pointer-events: inherit

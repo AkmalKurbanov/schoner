@@ -1,0 +1,65 @@
+// -- Результат поиска --
+  .header__search.search.search_result.d-flex.justify-end
+
+.header__search.search.d-flex.justify-end
+  .search__wrap
+    .search__input
+      input.input-search-js(type="text" placeholder="Suche nach Produkten, Marken oder Neuheiten")
+      .search__clear.clear-search-js
+        .search__clear-btn.transition  
+          svg(width='8' height='8' viewBox='0 0 9 9' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(d='M2.03033 0.46967C1.73744 0.176777 1.26256 0.176777 0.96967 0.46967C0.676777 0.762563 0.676777 1.23744 0.96967 1.53033L2.03033 0.46967ZM7.46967 8.03033C7.76256 8.32322 8.23744 8.32322 8.53033 8.03033C8.82322 7.73744 8.82322 7.26256 8.53033 6.96967L7.46967 8.03033ZM8.53033 1.53033C8.82322 1.23744 8.82322 0.762563 8.53033 0.46967C8.23744 0.176777 7.76256 0.176777 7.46967 0.46967L8.53033 1.53033ZM0.96967 6.96967C0.676777 7.26256 0.676777 7.73744 0.96967 8.03033C1.26256 8.32322 1.73744 8.32322 2.03033 8.03033L0.96967 6.96967ZM0.96967 1.53033L7.46967 8.03033L8.53033 6.96967L2.03033 0.46967L0.96967 1.53033ZM7.46967 0.46967L0.96967 6.96967L2.03033 8.03033L8.53033 1.53033L7.46967 0.46967Z' fill='#ccc')
+
+      .search__results.bg-white.p-15.w100p
+        
+        .search__results-item.pt-20.pb-20
+          .title.title_h2.mb-15 Title 
+
+          div
+            each link in [1,2,3]
+              .search__results-link.d-flex.align-center.justify-between.pt-15.pb-15
+                a(href="#").text-black.tdn.h-main-undrln.w100p.mr-15 link 
+                  =link
+                button  
+                  .icon 
+                    svg(width='20' height='20' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                      path(d='M7.5 7L17.5 17M7.5 7H16.5M7.5 7V16' stroke='#0F0F0F' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+
+            
+        .search__results-item.pt-20.pb-20
+          .title.title_h2.mb-15 Kategorien 
+
+          div
+            each category in [1,2,3]
+              .search__results-link.d-flex.align-center.justify-between.pt-15.pb-15
+                a(href="#").text-black.tdn.h-main-undrln.w100p Kategorie 
+                  =category
+                
+            
+              
+        .search__results-item.pt-20.pb-20
+          .title.title_h2.mb-15 Produkte 
+
+          div
+            each product in [1,2,3]
+              .search__results-link.d-flex.align-center.justify-between.pt-15.pb-15
+                a(href="#").text-black.tdn.h-main.w100p.d-flex.align-end.justify-between
+                  .d-flex.align-stretch
+                    .search__results-img.mr-15
+                      img.object-contain-img(src="images/dist/search-result.webp", alt="")
+                    
+                    .search__results-info.d-flex.flex-column.justify-between
+                      span.text-uppercase Produkte 
+                        =product
+                      .fz-12.text-gray Produkte 
+                        =product
+                  .fw-bold CHF 29.90
+            
+            
+            
+              
+
+    button.search__btn
+      svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+        path(fill-rule='evenodd' clip-rule='evenodd' d='M10 3.75C6.54822 3.75 3.75 6.54822 3.75 10C3.75 13.4518 6.54822 16.25 10 16.25C13.4518 16.25 16.25 13.4518 16.25 10C16.25 6.54822 13.4518 3.75 10 3.75ZM2.25 10C2.25 5.71979 5.71979 2.25 10 2.25C14.2802 2.25 17.75 5.71979 17.75 10C17.75 14.2802 14.2802 17.75 10 17.75C5.71979 17.75 2.25 14.2802 2.25 10Z' fill='white')
+        path(fill-rule='evenodd' clip-rule='evenodd' d='M14.4697 14.4697C14.7626 14.1768 15.2374 14.1768 15.5303 14.4697L21.5303 20.4697C21.8232 20.7626 21.8232 21.2374 21.5303 21.5303C21.2374 21.8232 20.7626 21.8232 20.4697 21.5303L14.4697 15.5303C14.1768 15.2374 14.1768 14.7626 14.4697 14.4697Z' fill='white')

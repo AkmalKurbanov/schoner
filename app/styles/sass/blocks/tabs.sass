@@ -1,0 +1,85 @@
+.tab
+  margin-top: rem(65)
+
+  ul
+    white-space: nowrap
+    overflow-x: auto
+    overflow-y: hidden
+    margin-bottom: rem(40)
+    position: relative
+
+    &::after
+      position: absolute
+      content: ''
+      width: 100%
+      height: rem(1)
+      background: #B9B9B9
+      bottom: 0
+      left: 0
+      width: 100%
+      z-index: 1
+
+    li
+      border-radius: rem(6) rem(6) 0 0
+      transition: $tr
+      display: inline-block
+      border-top: rem(1) solid transparent
+      border-right: rem(1) solid transparent
+      border-left: rem(1) solid transparent
+      float: left
+      outline: none
+      z-index: 2
+
+      &:hover
+        a
+          color: $mc
+
+      &.current
+        border-top: rem(1) solid #B9B9B9
+        border-right: rem(1) solid #B9B9B9
+        border-left: rem(1) solid #B9B9B9
+        position: relative
+
+        &::after
+          position: absolute
+          content: ''
+          width: 100%
+          height: rem(1)
+          background: $wc
+          bottom: 0
+          left: 50%
+          transform: translateX(-50%)
+
+        a
+          color: $mc
+
+      a
+        @include aic-jcc
+        transition: $tr
+        outline: none
+
+  &__content
+    position: relative
+
+  &__item
+    position: absolute
+    opacity: 0
+    transition: .5s
+    pointer-events: none
+    top: 0
+    width: 100%
+
+    &.show
+      position: relative
+      opacity: 1
+      pointer-events: inherit
+
+    .w50p 
+      width: calc( 50% - 27.5px ) 
+
+    .w50p, 
+    .w100p
+      margin-bottom: rem(65)
+
+    .w25p
+      width: calc( 25% - 15px )

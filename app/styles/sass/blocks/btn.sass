@@ -1,0 +1,67 @@
+.btn
+  color: $wc
+  font-size: rem(15)
+  font-weight: 500
+  line-height: rem(20)
+  height: rem(48)
+  outline: none
+  border: none
+  @include aic-jcc
+  display: inline-flex
+  cursor: pointer
+  transition: $tr
+  text-decoration: none
+  border-radius: rem(1)
+  padding: 0 rem(25)
+  
+  &_accent
+    background: $mc
+
+    &:hover
+      background: #c7000a
+
+  &_secondary
+    background: $bc
+
+    &:hover
+      background: rgba($bc, .9)
+
+  &_bordered-dark
+    background: none
+    border: rem(1) solid $bc
+    color: $bc
+
+    .icon
+      width: rem(22)
+      height: rem(22)
+
+    &:hover
+      background: rgba($bc, .9)
+      color: $wc
+
+      .icon
+        &_fill
+          svg
+            fill: $wc
+      
+
+  &_light
+    background: $wc
+    color: $bc
+
+    &:hover
+      background: $lgc
+
+  &_inline
+    display: inline-flex
+
+.btn-reset
+  border: none
+  outline: none
+  cursor: default
+  border: none
+  background: none
+  width: auto
+  height: auto
+  margin: 0
+  padding: 0

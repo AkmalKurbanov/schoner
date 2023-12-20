@@ -1,0 +1,48 @@
+.product-slider
+  margin-bottom: rem(80)  
+    
+  &__wrapper
+    position: relative
+
+
+    .swiper-wrapper
+      align-items: stretch
+      
+    .swiper-slide
+      height: auto
+  
+  &__slide
+    height: 100%
+
+    .product-item
+      height: 100%
+
+  &__nav-btn
+    width: rem(40)
+    height: rem(40)
+    border: rem(1) solid $bc
+    border-radius: 100%
+    background: $wc
+    z-index: 3
+
+    &::after
+      display: none
+
+    &_prev
+      transform: rotate(90deg)
+      left: rem(-20)
+
+    &_next
+      transform: rotate(-90deg)
+      right: rem(-20)
+
+    &:hover
+      border-width: rem(2)
+
+    &.swiper-button-disabled
+      opacity: 0
+      pointer-events: none
+    
+  .swiper-scrollbar
+    position: relative
+    bottom: auto

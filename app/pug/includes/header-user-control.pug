@@ -1,0 +1,147 @@
+.user-control.d-flex
+  .user-control__item 
+    .icon 
+      svg(width="24" height="24")
+        use(xlink:href='#user')
+
+    .user-control__dropdown.user-control__dropdown_profile.bg-white.p-30    
+      form(action="") 
+        .input.mb-25    
+          input(type="text" placeholder="E-mail")   
+
+        .input.input_pass.mb-25    
+          input(type="password" placeholder="Password")    
+          .input__pass-icon.input-pass-js
+            .icon.icon_stroke
+              svg(width="24" height="24")
+                use(xlink:href='#eye')
+
+        button.btn.btn_accent.w100p.mb-25 Anmelden
+
+        a(href="#").text-gray.h-black.h-tdn.mb-40.d-ib Passwort vergessen?
+        .title.title_h3.mb-15 Neu hier?
+        button.btn.btn_secondary.w100p.mb-25 Anmelden
+    
+    .user-control__dropdown.bg-white.p-30    
+      .title.title_h3.mb-10 Mein Konto
+      p.lh-24.text-gray.mb-30 Hallo, kaldybaevtv@gmail.com!
+      
+      .line-separate.mt-35.mb-35 
+
+      .user-control__profile-list
+        ul.mb-40
+          each profile in [{"item":{'icon':'cart','name':'Bestellungenr'}},{"item":{'icon':'heart','name':'Favoriten'}},{"item":{'icon':'aww','name':'Premiumcard & Vorteile'}}]
+            li.mb-15
+              a(href="#").text-black.fz-14.tdn.h-undrln
+                .d-flex.align-center.justify-between
+                  .d-flex.align-center
+                    .icon.mr-15
+                      svg(width="18" height="18")
+                        use(xlink:href='#'+profile.item.icon)
+                    =profile.item.name
+                  .icon.angle
+                    svg(width="18" height="18")
+                      use(xlink:href='#angle') 
+        
+        ul.mb-40
+          each profile in [{"item":{'icon':'user-circle','name':'Kontodaten ändern'}},{"item":{'icon':'marker','name':'Adressen verwalten'}},{"item":{'icon':'question-circle','name':'Hilfe & Kontakt'}}]
+            li.mb-15
+              a(href="#").text-black.fz-14.tdn.h-undrln
+                .d-flex.align-center.justify-between
+                  .d-flex.align-center
+                    .icon.mr-15
+                      svg(width="18" height="18")
+                        use(xlink:href='#'+profile.item.icon)
+                    =profile.item.name
+                  .icon.angle
+                    svg(width="18" height="18")
+                      use(xlink:href='#angle') 
+
+        a(href="#").text-black.fz-10.ttu.fw-500.text-uppercase.tdn.h-undrln ABMELDEN     
+  
+  .user-control__item 
+    .icon 
+      .user-control__count.bg-main.text-white.fz-10.fw-500.d-flex.align-center.justify-center.text-center 1
+      svg(width="24" height="24")
+        use(xlink:href='#heart') 
+
+    .user-control__dropdown.bg-white.p-30
+      .title.title_h3.mb-20 Meine Favoriten   
+      
+      p.lh-24.text-gray.mb-30 Sie haben sich in ein Produkt verliebt? Einfach auf das Herz-Symbol klicken, das bei jedem Produkt erscheint.
+
+      a(href="#").btn.btn_accent Jetzt registrieren  
+
+      .border-lgc.p-15.d-flex.mt-30
+        div.mr-15
+          .icon.icon_stroke
+            svg(width='24' height="24")
+              use(xlink:href='#info') 
+        div 
+          .title.title_4.mb-5 Jetzt neu!
+          p.lh-24.text-gray.mb-20 In Ihrem XXXLutz online Kundenkonto können Sie Ihre Wohnträume in mehreren Listen organisieren.
+
+          a(href="#").text-black.fw-500.h-tdn.h-gray Anmelden
+  
+    .user-control__dropdown.bg-white.p-30
+      .title.title_h3.mb-15 Meine Favoriten
+      
+      .user-control__products-count.text-gray.fz-18.lh-28 10 Artikel
+
+      .scroll-block-wrap
+        .user-control__products-list.mt-25.mb-25.scroll-block.scroll-block-js
+          each item in [1,2,3,4,5,6,7,8,9,10]
+            .user-control__products-item.pt-20.pb-20
+              .d-flex.align-start.justify-between 
+                a(href="#").d-flex.align-start.tdn
+                  .user-control__products-img.d-flex.align-center.mr-20
+                    img.object-contain-img(src="images/dist/user-control.webp", alt="product")
+                  .user-control__products-desc 
+                    .text-black.fz-14.fw-500.lh-20.mb-5 Novel ARMLEHNSTUHL in Stahl Echtleder
+                    .text-gray.fz-12.lh-18 Grau, Schwarz 58/88/59 cm
+                button.btn-reset.cup.h-main
+                  .icon.icon_fill
+                    svg(width="18" height="18")
+                      use(xlink:href='#trash')
+              .d-flex.justify-end.mt-15   
+                .text-black.fz-15.lh-18.fw-500 CHF 299.‒
+      button.btn.btn_accent.w100p Zu den Favoriten 
+  
+  .user-control__item 
+    .icon 
+      .user-control__count.bg-main.text-white.fz-10.fw-500.d-flex.align-center.justify-center.text-center 1
+      svg(width="24" height="24")
+        use(xlink:href='#cart') 
+
+    .user-control__dropdown.bg-white.p-30
+      .title.title_h3.mb-20 Warenkorb   
+      
+      p.lh-24.text-gray.mb-30 Ihr Warenkorb ist leer!
+
+      a(href="#").btn.btn_accent Weiter einkaufen
+
+
+    .user-control__dropdown.bg-white.p-30
+      .title.title_h3.mb-15 Meine Favoriten
+      
+      .user-control__products-count.text-gray.fz-18.lh-28 10 Artikel
+
+      .scroll-block-wrap
+        .user-control__products-list.mt-25.mb-25.scroll-block.scroll-block-js
+          each item in [1,2,3,4,5,6,7,8,9,10]
+            .user-control__products-item.pt-20.pb-20
+              .d-flex.align-start.justify-between 
+                a(href="#").d-flex.align-start.tdn
+                  .user-control__products-img.d-flex.align-center.mr-20
+                    img.object-contain-img(src="images/dist/user-control.webp", alt="product")
+                  .user-control__products-desc 
+                    .text-black.fz-14.fw-500.lh-20.mb-5 Novel ARMLEHNSTUHL in Stahl Echtleder
+                    .text-gray.fz-12.lh-18 Grau, Schwarz 58/88/59 cm
+                button.btn-reset.cup.h-main
+                  .icon.icon_fill
+                    svg(width="18" height="18")
+                      use(xlink:href='#trash')
+              .d-flex.justify-between.mt-15   
+                .text-black.fz-15.lh-18.fw-500 Preis für 1 Stk.:
+                .text-black.fz-15.lh-18.fw-500 CHF 299.‒
+      button.btn.btn_accent.w100p Zu den Favoriten 

@@ -1,0 +1,104 @@
+.product-item
+  border: rem(1) solid $lgc
+  position: relative
+
+  &__favorite
+    position: absolute
+    top: rem(15)
+    right: rem(15)
+    z-index: 1
+
+    &.active
+      .icon
+        svg
+          fill: $mc
+
+  &__link
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+
+  &__hidden-img
+    display: none
+
+  &__img,
+  &__hidden-img,
+  &__hidden-img-list
+    max-width: rem(160)
+    min-width: rem(160)
+    width: 100%
+    height: rem(160)
+    position: relative
+    pointer-events: none
+
+  &__hidden-img-list
+    display: none
+
+    ul,li
+      width: 100%
+      height: 100%
+      position: relative
+    li
+      display: none
+
+  .status
+    position: absolute
+    top: rem(16)
+    left: rem(16)
+    z-index: 1
+
+  &__desc
+    min-height: rem(58)
+
+  &_more
+    &::before
+      position: absolute
+      content: ''
+      width: 100%
+      height: 100%
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      background: rgba($wc,.9 )
+      z-index: 2
+
+  &__more
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    text-underline-offset: .4em
+    z-index: 3
+    pointer-events: inherit
+
+  &__hidden-thumbs
+    display: none
+    min-height: rem(58)
+
+    ul
+      li
+        a
+          max-width: rem(36)
+          min-width: rem(36)
+          width: 100%
+          height: rem(36)
+          position: relative
+          border: rem(1) solid $lgc
+
+        &:last-child
+          padding-right: 0!important
+
+.status
+  border-width: rem(1)
+  border-style: solid
+  min-height: rem(24)
+  pointer-events: none
+
+  &_orange
+    border-color: #F6A800
+    color: #f6a800

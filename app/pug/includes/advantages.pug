@@ -1,0 +1,11 @@
+.advantages
+  .container
+    .title.title_h1.mb-40.text-center Vorteile
+    .advantages__wrap.d-flex.justify-around
+      each advantage,index in ['10% Newsletter <br> Gutschein','Sicher bezahlen', 'Gratis Postversand ab <br> 99.- CHF Bestellwert','Click & Collect','Gratis Transporter bei <br> Selbstabholung','Montageservice bei <br> Lieferung'] 
+        a(href="#").advantages__item.text-center.tdn.h-undrln.fz-12.lh-18.text-black.d-flex.align-center.flex-column
+          .advantages__item-img.mb-15.pos-r.d-flex.align-center.justify-center
+            img.object-contain-img(src="images/dist/advantage"+(index + 1)+".svg", alt="advantage")
+          .advantages__item-title!=advantage 
+
+

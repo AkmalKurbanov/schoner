@@ -1,0 +1,35 @@
+.hero-slider 
+  &__slide
+    max-height: rem(520)
+    min-height: rem(520)
+    background-size: cover
+    background-position: center center
+    background-repeat: no-repeat
+
+  .swiper-pagination
+    position: relative
+    bottom: auto
+
+    span
+      width: rem(10)
+      height: rem(10)
+
+      &.swiper-pagination-bullet-active 
+        background: $mc
+    
+  &__nav-btn
+    background: $bc
+    width: rem(24)
+    height: rem(24)
+    border-radius: 100%
+    
+    
+    &::after
+      display: none
+
+    &_prev
+      transform: rotate(90deg)  
+
+    &_next
+      transform: rotate(-90deg)  
+

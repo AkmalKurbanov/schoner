@@ -1,0 +1,90 @@
+// USER VARIABLES SECTION
+
+$mc: #ED1C24 // Accent Color
+$fontsize: 16px // Body Font Size
+$tc: #0F0F0F // Text Color
+$userfont: Jost, sans-serif // User Font Family
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+
+
+$wc: #fff
+$lgc: #E5E5E5
+$gc: #767676
+$bc: #0F0F0F
+$tr: all .3s
+
+
+// Bootstrap compatible gutter variable => $gutter
+// $grid-gutter-width: 30px
+// $gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+@import 'blocks/mixins/_flex'
+@import 'blocks/mixins/_rem'
+@import 'blocks/mixins/_media'
+@import 'node_modules/normalize.css/normalize'
+@import 'node_modules/swiper/swiper-bundle.min'
+@import 'node_modules/macro-css/index.min'
+// @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+// @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/_utilities.scss' // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+						
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl)
+
+@include font('Jost', normal, 100, '../fonts/Jost-Thin.ttf')
+@include font('Jost', italic, 100, '../fonts/Jost-ThinItalic.ttf')
+@include font('Jost', normal, 200, '../fonts/Jost-ExtraLight.ttf')
+@include font('Jost', italic, 200, '../fonts/Jost-ExtraLightItalic.ttf')
+@include font('Jost', normal, 300, '../fonts/Jost-Light.ttf')
+@include font('Jost', italic, 300, '../fonts/Jost-LightItalic.ttf')
+@include font('Jost', normal, 400, '../fonts/Jost-Regular.ttf')
+@include font('Jost', italic, 400, '../fonts/Jost-Italic.ttf')
+@include font('Jost', normal, 500, '../fonts/Jost-Medium.ttf')
+@include font('Jost', italic, 500, '../fonts/Jost-MediumItalic.ttf')
+@include font('Jost', normal, 600, '../fonts/Jost-SemiBold.ttf')
+@include font('Jost', italic, 600, '../fonts/Jost-SemiBoldItalic.ttf')
+@include font('Jost', normal, 700, '../fonts/Jost-Bold.ttf')
+@include font('Jost', italic, 700, '../fonts/Jost-BoldItalic.ttf')
+@include font('Jost', normal, 800, '../fonts/Jost-ExtraBold.ttf')
+@include font('Jost', italic, 800, '../fonts/Jost-ExtraBoldItalic.ttf')
+@include font('Jost', normal, 900, '../fonts/Jost-Black.ttf')
+@include font('Jost', italic, 900, '../fonts/Jost-BlackItalic.ttf')
+
+// GENERAL CSS SETTINGS
+
+
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $mc
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-family: $userfont
+	font-size: $fontsize
+	color: $tc
+	min-width: rem(320)
+	position: relative
+	overflow-x: hidden
+	letter-spacing: rem(.4)
+
+
+

@@ -1,0 +1,132 @@
+.cup
+  cursor: pointer
+
+.pointer-none
+  pointer-events: none
+
+.tdn
+  text-decoration: none
+
+.tdu
+  text-decoration: underline
+
+.transition
+  transition: $tr
+
+.h-main
+  transition: $tr
+  &:hover
+    color: $mc
+
+    .icon
+      &_stroke
+        svg
+          stroke: $mc
+      &_fill
+        svg
+          fill: $mc
+
+.h-main-undrln
+  transition: $tr
+  &:hover
+    color: $mc
+    text-decoration: underline
+
+.h-undrln
+  &:hover
+    text-decoration: underline
+
+.h-bg-main
+  transition: $tr
+  &:hover
+    background: $mc
+    color: $wc
+
+.h-bg-lgc
+  transition: $tr
+
+  &:hover
+    background: $lgc
+
+.h-black
+  transition: $tr
+
+  &:hover
+    color: $bc
+
+.h-light-gray
+  transition: $tr
+
+  &:hover
+    color: $lgc
+
+.h-gray
+  transition: $tr
+
+  &:hover
+    color: $gc
+
+.h-tdn
+  .underline
+    pointer-events: none
+
+  &:hover
+    text-decoration: none
+    
+    .underline
+      opacity: 0
+
+.h-br-bc
+  border: rem(1) solid transparent
+  transition: $tr
+  
+  &:hover
+    border-color: $bc
+
+.td-undrln
+  position: relative
+  text-decoration: none
+  padding-bottom: rem(1)
+
+  .underline
+    position: absolute
+    width: 100%
+    height: rem(1)
+    left: 0
+    bottom: 0
+    width: 100%
+    transition: $tr
+
+.h-td-undrln
+  position: relative
+  text-decoration: none
+  padding-bottom: rem(1)
+  
+  .underline
+    position: absolute
+    width: 100%
+    height: rem(1)
+    left: 0
+    bottom: 0
+    width: 100%
+    transition: $tr
+    opacity: 0
+
+  &:hover
+    .underline
+      opacity: 1
+      
+
+.radius-100
+  border-radius: 100%      
+
+.h-img-scale
+  &:hover
+    img
+      transform: scale(1.1)
+
+.o-hidden
+  overflow: hidden
+
+.bordered-lgc
+  border: rem(1) solid $lgc  

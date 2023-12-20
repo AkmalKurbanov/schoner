@@ -1,0 +1,132 @@
+.search
+  transition: $tr
+
+  &__input
+    width: 100%
+    position: relative
+
+    input
+      border: rem(1) solid $lgc
+      height: rem(48)
+      transition: $tr
+      padding: rem(16) rem(72) rem(16) rem(16)
+      font-size: rem(14)
+
+      &::placeholder
+        color: #767676
+        font-size: rem(12)
+        text-transform: uppercase
+        letter-spacing: rem(1.6)
+      
+      
+      &:focus,
+      &:hover
+        border-color: $bc
+
+    &.searching
+      input    
+        border-color: $bc
+      
+      .search__clear
+        opacity: 1
+        pointer-events: inherit  
+
+  &__clear
+    position: absolute
+    top: 50%
+    right: rem(24)
+    transform: translateY(-50%)
+    opacity: 0
+    pointer-events: none
+
+  &__clear-btn
+    max-width: rem(24)
+    min-width: rem(24)
+    height: rem(24)
+    @include aic-jcc
+    border-radius: 100%
+    border: rem(1) solid $lgc
+    transition: $tr
+    cursor: pointer
+
+    svg
+      path
+        transition: $tr
+    
+    
+    &:hover
+      border-color: $bc
+      svg
+        path
+          fill: $bc
+  &__btn
+    border-radius: rem(1)
+    background: $mc
+    color: $wc
+    @include aic-jcc
+    max-width: rem(64)
+    min-width: rem(64)
+    width: 100%
+    border: none
+    cursor: pointer
+    transition: $tr
+
+    &:hover
+      background: #c7000a
+
+  &__wrap
+    @include aistr
+    width: 100%
+    transition: $tr
+
+    &:hover
+      box-shadow: 0 0.25rem 0.3125rem -0.125rem #00000014
+
+    
+
+  &__results
+    position: absolute
+    top: 100%
+    border: rem(1) solid $bc
+    border-top: rem(1) solid $lgc
+    max-height: rem(480)
+    overflow-x: auto
+    display: none
+
+  &__results-item,
+  &__results-link
+    border-bottom: rem(1) solid $lgc
+
+    &:first-child
+      padding-top: 0!important
+
+    &:last-child
+      padding-bottom: 0!important
+      border-bottom: none
+
+  &__results-link
+
+    button
+      background: none
+      outline: none
+      border: none
+      cursor: pointer
+
+  &__results-img
+    max-width: rem(50)
+    min-width: rem(50)
+    height: rem(50)
+    position: relative
+
+    
+
+  &_result
+    .search__wrap
+      box-shadow: 0 0.25rem 0.3125rem -0.125rem #00000014
+
+    input
+      border-color: $bc
+      border-bottom: none
+
+    .search__results
+      display: block  

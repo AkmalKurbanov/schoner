@@ -1,0 +1,59 @@
+mixin heroSlider(title)
+  if title
+    .container
+      .title.title_h1.mb-15=title
+    .hero-slider.mb-40
+      .swiper.hero-slider-js
+        .swiper-wrapper
+          each item in [1,2,3]
+            .swiper-slide
+              .hero-slider__slide.d-flex.align-end.pt-25.pb-25(style=`background-image: url('images/dist/hero-slide${item}.webp')`)
+                .container
+                  a(href="#").btn.btn_light.btn_inline.mb-15 Zu den Angeboten
+                    .icon.ml-5
+                      svg
+                        use(xlink:href='#arrow') 
+
+                  p.text-white.fz-10 1) siehe 
+                    a(href="#").text-white.h-tdn.fw-500 Aktionsbedingungen    
+
+
+        .swiper-pagination.mt-20
+        
+        .swiper-button-prev.hero-slider__nav-btn.hero-slider__nav-btn_prev.d-flex.align-center.justify-center.transition.h-bg-lgc
+          .icon.icon_stroke.icon_stroke-white  
+            svg(width="14" height="14")
+              use(xlink:href='#angle')
+        
+        .swiper-button-next.hero-slider__nav-btn.hero-slider__nav-btn_next.d-flex.align-center.justify-center.transition.h-bg-lgc
+          .icon.icon_stroke.icon_stroke-white
+            svg(width="14" height="14")
+              use(xlink:href='#angle')
+  else 
+    .hero-slider.mb-40
+      .swiper.hero-slider-js
+        .swiper-wrapper
+          each item in [1,2,3]
+            .swiper-slide
+              .hero-slider__slide.d-flex.align-end.pt-25.pb-25(style=`background-image: url('images/dist/hero-slide${item}.webp')`)
+                .container
+                  a(href="#").btn.btn_light.btn_inline.mb-15 Zu den Angeboten
+                    .icon.ml-5
+                      svg
+                        use(xlink:href='#arrow') 
+
+                  p.text-white.fz-10 1) siehe 
+                    a(href="#").text-white.h-tdn.fw-500 Aktionsbedingungen    
+
+
+        .swiper-pagination.mt-20
+        
+        .swiper-button-prev.hero-slider__nav-btn.hero-slider__nav-btn_prev.d-flex.align-center.justify-center.transition.h-bg-lgc
+          .icon.icon_stroke.icon_stroke-white  
+            svg(width="14" height="14")
+              use(xlink:href='#angle')
+        
+        .swiper-button-next.hero-slider__nav-btn.hero-slider__nav-btn_next.d-flex.align-center.justify-center.transition.h-bg-lgc
+          .icon.icon_stroke.icon_stroke-white
+            svg(width="14" height="14")
+              use(xlink:href='#angle')

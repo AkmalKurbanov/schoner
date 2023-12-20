@@ -1,0 +1,61 @@
+.category
+  
+  &__wrap
+    margin-left: rem(-15)
+    margin-right: rem(-15)
+
+  &__col
+    padding: 0 rem(15)
+
+    &_w25p
+      width: 25%
+      .category__item-top
+        height: rem(284)
+    
+    &_w33p
+      width: 33.33%
+      .category__item-top
+        height: rem(390)
+  &__item
+    &:hover
+      .category__item-top
+        img
+          transform: scale(1.1)
+  &__item-top
+    pointer-events: none
+    overflow: hidden
+    
+  &__subcategory
+    li
+      position: relative
+      display: inline-block
+      margin-top: rem(8)
+      margin-right: 8px
+
+      a
+        margin-right: rem(8)
+        position: relative
+
+        &::after
+          position: absolute
+          content: '/'
+          top: rem(2)
+          right: rem(-16)
+
+      &:last-child
+        margin-right: 0
+        a
+          padding-right: 0
+          margin-right: 0
+
+          &::after
+            display: none
+
+  &__item-link
+    position: absolute
+    width: 100%
+    height: 100%
+
+  &_popular
+    .category__col
+      

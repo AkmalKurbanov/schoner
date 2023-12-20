@@ -1,0 +1,106 @@
+.nav-drop
+  position: absolute
+  top: 100%
+  max-width: rem(1440)
+  min-width: rem(1440)
+  width: 100%
+  left: 50%
+  transform: translateX(-50%)
+  
+  @media (max-width: 1500px)
+    max-width: rem(1300)
+    min-width: rem(1300)
+
+  @media (max-width: 1300px)
+    max-width: rem(1240)
+    min-width: rem(1240)
+
+  &__sidebar
+    background: #F6F5F1
+    max-width: rem(245)
+    width: 100%
+
+    li
+      a
+        padding: rem(16) rem(24)
+
+        .icon
+          transform: rotate(-90deg)
+          svg
+            fill: $bc
+
+        // &:hover
+        //   .icon
+        //     svg
+        //       fill: $wc
+
+      &.current
+        a
+          background: $mc
+          color: $wc
+
+  &__category-img
+    max-width: rem(24)
+    min-width: rem(24)
+    width: 100%
+    height: rem(24)
+    background: $wc
+    position: relative
+
+  &__subcategory
+    width: 33.33%
+
+    ul
+      li
+        position: relative
+
+        &::before
+          position: absolute
+          content: ''
+          width: rem(6)
+          height: rem(6)
+          border-radius: 100%
+          background: $mc
+          top: rem(10)
+          left: 0
+
+        a
+          line-height: rem(24)
+          text-decoration: none
+          color: $bc
+          padding: 0
+
+        &:last-child
+          margin-bottom: 0
+
+        ul
+          li
+            &::before
+              display: none
+
+            a
+              line-height: rem(18)
+
+  &__subcategory-img
+    max-width: rem(272)
+    min-width: rem(272)
+    height: rem(296)
+    position: relative
+
+    &:hover
+      box-shadow: 0 1rem .75rem 0 #0000003d,0 1.25rem 2.5rem 0 #0000003d
+
+    
+
+    .icon
+      width: rem(24)
+      height: rem(24)
+      border-radius: 100%
+      overflow: hidden
+
+  &__subcategory-img-bottom
+    position: relative
+
+  &__subcategory-img-title
+    letter-spacing: rem(.1)
+    line-height: rem(24)

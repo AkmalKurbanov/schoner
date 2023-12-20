@@ -1,0 +1,82 @@
+.header__nav
+  .tab-1.tab1-js
+    ul.tabs-1.tabs-1_parent.d-flex
+      each nav,index in ['Möbel','Kochen & Essen','Accessoires','Leuchten','Baby','Freizeit & Co','X-Mas','Angebote']
+        if nav == 'Angebote'
+          li.header__nav-parent.special(data-tab-id='parent'+(index + 1))
+            a(href='#').fz-15.tdn.text-black.d-flex.align-center.header__nav-parent-link=nav
+              .icon.ml-5  
+                svg(width='14' height='14')
+                  use(xlink:href='#angle')
+        else
+          li.header__nav-parent(data-tab-id='parent'+(index + 1))
+            a(href='#').fz-15.tdn.text-black.d-flex.align-center.header__nav-parent-link=nav
+              .icon.ml-5  
+                svg(width='14' height='14')
+                  use(xlink:href='#angle')
+    
+    .tab_content-1.tab_content-1_parent.nav-drop.bg-white
+      each item,index in [1,2,3,4,5,6,7,8]
+        .tabs_item-1(data-tab-id='parent'+(index + 1))
+          .tab-2.tab2-js.d-flex  
+            ul.tabs-2.nav-drop__sidebar.pt-30.pb-30 
+              each category,index in ['Küchen','Wohnzimmer','Esszimmer','Schlafzimmer','Gartenmöbel','Garderobe','Badezimmer','Baby & Kindermöbel','Büromöbel','Kleinmöbel'] 
+                if index == 0
+                  li(data-tab-id='child'+(index + 1)).current
+                    a(href="#").d-flex.align-center.justify-between.text-black.tdn.h-bg-main.fz-14
+                      .nav-drop__sidebar-category 
+                        .d-flex.align-center
+                          .nav-drop__category-img.d-flex.align-center.justify-center.mr-15
+                            img.object-contain-img(src="images/dist/", alt="category") 
+                          =category 
+                          =item
+                      .icon
+                        svg(width="18" height="18")
+                          use(xlink:href='#angle')
+                else
+                  li(data-tab-id='child'+(index + 1))
+                    a(href="#").d-flex.align-center.justify-between.text-black.tdn.h-bg-main.fz-14
+                      .nav-drop__sidebar-category 
+                        .d-flex.align-center
+                          .nav-drop__category-img.d-flex.align-center.justify-center.mr-15
+                            img.object-contain-img(src="images/dist/", alt="category") 
+                          =category 
+                          =item
+                      .icon
+                        svg(width="18" height="18")
+                          use(xlink:href='#angle')
+
+            .tab_content-2.w100p
+              each sub,index in [1,2,3,4,5,6,7,8,9,10] 
+                .tabs_item-2(data-tab-id='child'+(index + 1))
+                  .d-flex.pt-25.pb-30.pl-50.pr-25 
+                    .d-flex.flex-wrap.w100p
+                      each countSubCategory in [1,2,3,4,5,6,7,8,9,10,11]
+                        .nav-drop__subcategory.mb-30.pr-15
+                          ul
+                            li.mb-15.pl-15  
+                              a(href="#").fz-14.fw-500.text-black.h-undrln Küchenblöcke
+                                =item
+                                |.
+                                =sub
+                              ul
+                                each subName in ['Küchenzeilen','Eckküchen','Miniküche','Schrankküchen','Alles anzeigen']
+                                  li.mt-10   
+                                    a(href="#").fz-14.fw-400.text-black.h-undrln=subName
+                                      =item
+                                      |.
+                                      =sub
+                      
+                      
+                    div
+                      a(href="#").nav-drop__subcategory-img.tdn.d-flex.align-end.transition
+                        img.object-contain-img(src="images/dist/subcategory.webp", alt="subcategory") 
+
+                        .nav-drop__subcategory-img-bottom.d-flex.align-center.justify-between.w100p.p-25 
+                          .nav-drop__subcategory-img-title.text-white.fz-20.fw-600 Title 
+                            =item
+                            |.
+                            =sub
+                          .icon.bg-white
+                            svg(width="16" height="16")
+                              use(xlink:href='#arrow')

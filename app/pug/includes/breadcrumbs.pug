@@ -1,0 +1,33 @@
+mixin breadcrumbs(crumb1, crumb2, crumb3)
+  .breadcrumbs.mt-40
+    .container
+      ul.d-flex.align-center.flex-wrap  
+        li.d-flex.align-center 
+          a(href="#").h-main 
+            .icon.icon_fill 
+              svg(width="18" height="18")
+                use(xlink:href='#home')
+          .icon.icon_fill 
+            svg(width="18" height="18")
+              use(xlink:href='#angle-right')      
+        if crumb1 
+          li.d-flex.align-center
+            a(href="#").fz-10.text-gray.fw-500.text-uppercase.ls-1-6.tdn.h-td-undrln=crumb1  
+            .icon.icon_fill 
+              svg(width="18" height="18")
+                use(xlink:href='#angle-right')      
+        else
+        if crumb2 
+          li.d-flex.align-center
+            a(href="#").fz-10.text-gray.fw-500.text-uppercase.ls-1-6.tdn.h-td-undrln=crumb2  
+            .icon.icon_fill 
+              svg(width="18" height="18")
+                use(xlink:href='#angle-right')      
+        else
+        if crumb3 
+          li.d-flex.align-center
+            a(href="#").fz-10.text-gray.fw-500.text-uppercase.ls-1-6.tdn.h-td-undrln=crumb3  
+            .icon.icon_fill 
+              svg(width="18" height="18")
+                use(xlink:href='#angle-right')      
+        else

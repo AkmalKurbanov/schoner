@@ -1,0 +1,76 @@
+extends layouts/main
+
+block vars
+  - var description = '';
+  - var keywords= '';
+  - var ogtitle = '';
+  - var ogtype = '';
+  - var ogurl = '';
+  - var ogimg = '';
+
+block title
+  | main 
+block main
+  .wrapper
+    .content
+      include includes/header
+
+      .main
+        include includes/hero-slider
+        include includes/product-slider
+        include includes/offers
+        include includes/category
+        
+        
+        +heroSlider
+        +productSlider('SCHONER Topseller','Weitere Topseller')
+        +offers('Angebote und Aktionen')
+        +category('XXXL Produktvielfalt')
+        +productSlider('Online Only Trendartikel','Weitere Angebote entdecken')
+        +heroSlider('Online Only Trendartikel')
+
+        .category
+          .container
+            .title.title_h1.mb-15 Beliebte Kategorien 
+            .category__wrap.d-flex.align-stretch.flex-wrap
+              each category in [1,2,3]
+                .category__col.category__col_w33p.mb-30
+                  .category__item.pos-r.border-lgc.category-item-js
+                    a(href="#1").category__item-link
+                    .category__item-top.d-flex.align-center.justify-center.pos-r
+                      img.object-cover-img.transition(src="images/dist/category.webp", alt=category)
+                    .category__item-bottom.p-25
+                      .title.title_h3.ls-0-1.mb-5 Garderobe 
+                        =category
+                      ul.category__subcategory 
+                        each subcategory in [1,2,3,4,5]
+                          li 
+                            a(href="#").text-black.fz-12.td-undrln.h-tdn.h-gray Subcat 
+                              =subcategory
+        .blocks
+          .container
+            .title.title_h1.mb-15 Rund um die Filialen 
+            .blocks__wrap.d-flex.flex-wrap
+              each block in [1,2,3,4,5,6,7,8]
+                .blocks__col.blocks__col_w25p.mb-30
+                  a(href="#").blocks__item.d-flex.align-center.justify-center.border-lgc.pos-r
+                    img.object-contain-img(src="images/dist/google.webp", alt="")
+
+        include includes/advantages
+        include includes/newsletter
+        include includes/banner
+        include includes/tabs
+
+
+
+        
+         
+
+    
+    svg(width="14" height="14")
+      use(xlink:href='#id1')
+    include includes/footer
+
+
+  include includes/svg-sprite 
+  include includes/scripts 

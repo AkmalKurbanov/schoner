@@ -1,0 +1,24 @@
+.border-lgc
+  border: rem(1) solid $lgc
+
+.border-gc
+  border: rem(1) solid $gc
+
+ul.ul-list
+  li
+    position: relative
+    margin-bottom: rem(8)
+    padding-left: rem(20)
+
+    &::before
+      position: absolute
+      content: ''
+      width: rem(6)
+      height: rem(6)
+      border-radius: 100%
+      background: $mc
+      top: rem(5)
+      left: 0
+    
+    &:last-child
+      margin-bottom: 0

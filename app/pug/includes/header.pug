@@ -1,0 +1,39 @@
+header.header.bg-white.d-flex.flex-column
+  .header__top.bg-black.d-flex.align-center
+    .container
+      .d-flex.align-center.justify-between
+        a(href="#").text-white.fz-12.fw-500.tdn.transition.h-main.d-flex.align-center  10% Gutschein bei Newsletteranmeldung
+          .icon.icon_fill.icon_fill-white.ml-5
+            svg(width="18" height="18")
+              use(xlink:href='#envelope')
+        .header__top-nav 
+          ul.d-flex.align-center
+            each item in ['Prospekte','Filialfinder','Hilfe & Kontakt'] 
+              li 
+                a(href="#").text-white.fz-12.fw-500.tdn.transition.h-main=item
+  
+  .header__middle
+    .container        
+      .d-flex.align-center.justify-between
+        a(href="#").header__logo
+          img(src="images/dist/logo.svg", alt="logo" width="104" height="80") 
+
+        include ../includes/header-search
+        
+  .header__bottom
+    .container
+      .header__nav-active-line
+      .header__nav-wrap.d-flex.align-end.justify-between
+        include ../includes/header-nav
+        include ../includes/header-user-control
+
+
+      
+                                  
+
+
+                 
+                            
+
+
+

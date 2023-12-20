@@ -1,0 +1,20 @@
+mixin category(title)
+  .category
+    .container
+      .title.title_h1.mb-15=title 
+      .category__wrap.d-flex.align-stretch.flex-wrap
+        each category in ['Wohnzimmer','Weihnachtsmarkt','Schlafzimmer','Esszimmer','Kochen & Essen','Freizeit & Co','Lampen & Leuchten','Heimtextilien']
+          .category__col.category__col_w25p.mb-30
+            .category__item.pos-r.border-lgc.category-item-js
+              a(href="#1").category__item-link
+              .category__item-top.d-flex.align-center.justify-center.pos-r
+                img.object-cover-img.transition(src="images/dist/category.webp", alt=category)
+              .category__item-bottom.p-25
+                .title.title_h3.ls-0-1.mb-5=category
+                ul.category__subcategory 
+                  each subcategory in [1,2,3,4,5]
+                    li 
+                      a(href="#").text-black.fz-12.td-undrln.h-tdn.h-gray Subcat 
+                        =subcategory
+
+
