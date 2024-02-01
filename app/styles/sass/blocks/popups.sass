@@ -1,0 +1,60 @@
+.slide-panel
+  position: fixed
+  top: 0
+  bottom: 0
+  right: -100%
+  max-width: rem(440)
+  width: 100%
+  z-index: 100
+  transition: $tr
+  opacity: 0
+  pointer-events: none
+
+  &__top
+    border-bottom: rem(1) solid $lgc
+
+  &__bottom
+    border-top: rem(1) solid $lgc
+
+  &__top,
+  &__bottom
+    padding: rem(25) rem(30)
+
+  &__close
+    max-width: rem(40)
+    min-width: rem(40)
+    width: 100%
+    height: rem(40)
+
+  &__content
+    height: calc( 100% - 190px )
+
+  &.open
+    right: 0
+    opacity: 1
+    pointer-events: inherit
+
+  &.close
+    right: -100%
+    opacity: 0
+    pointer-events: none
+
+.popup-message
+  position: fixed
+  top: rem(15)  
+  right: -100%
+  transition: $tr
+  opacity: 1
+  pointer-events: none
+
+  .check
+    svg
+      stroke: #468800
+
+  &_success
+    background: #EAF8DB
+
+  &.show
+    opacity: 1
+    right: rem(15)
+    pointer-events: inherit

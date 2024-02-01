@@ -1,0 +1,172 @@
+extends layouts/jq-ui
+
+block vars
+  - var description = '';
+  - var keywords= '';
+  - var ogtitle = '';
+  - var ogtype = '';
+  - var ogurl = '';
+  - var ogimg = '';
+
+block title
+  | Warenkorb
+block main
+  .wrapper
+    .content
+      include includes/header
+
+      .main
+        include includes/cart-popup
+        include includes/scroll-top
+
+        .special-order.bg-lgc
+          .special-order__close.cup.special-order-close-js
+            .icon   
+              svg(width="24" height="24")
+                use(xlink:href='#close')
+          .container 
+            .pt-15.pb-15.text-center 
+              p.fz-12.text-black Neu hier? Jetzt Kundenkonto anlegen und viele Vorteile geniessen <br>
+                a(href="#").text-black.fw-500.h-tdn Jetzt registieren
+        
+        .cart
+          .container
+            .cols.d-flex
+              .cols__col.pt-30
+                .title.title_h1 Warenkorb
+                a(href="#").d-if.align-center.fz-10.text-uppercase.text-black.tdn.h-undrln 
+                  .icon 
+                    svg(width="16" height="16")
+                      use(xlink:href='#arrow-left')  
+                  |weiter einkaufen   
+
+                .cart__item.mt-25
+                  .cart__item-col.d-flex.align-start.w100p
+                    .cart__img.bordered-lgc.d-flex-align-center.justify-center.mr-40 
+                      img.object-contain-img(src="images/dist/kind-thumb1.webp", alt="")
+                    
+                    .cart__item-col.w100p.d-flex.flex-wrap.justify-between.align-end
+                      
+                      .d-flex.justify-between.w100p.mb-20
+                        div 
+                          .d-flex.align-end.mb-10
+                            .status.status_orange.bg-white.text-uppercase.ls-1-6.fz-10.fw-500.lh-16.d-if.align-center.justify-center.pl-10.pr-10.text-center.mr-25 WERBUNG 
+                            .fz-14.text-gray Artikelnr. 2910004001
+                          div
+                            .fz-14.fw-500.mb-5 Novel ARMLEHNSTUHL in Edelstahl Mikrofaser      
+                            .fz-12.text-gray Anthrazit, HellgrauBreite/Höhe/Tiefe: 59/89,5/63 cm
+
+                        
+                        .d-flex.align-end
+                          .d-flex.flex-column.align-end.text-right 
+                            s.fz-12.text-gray.mb-5 statt CHF 299.‒
+                            .fz-14.fw-600.text-main.mb-5 CHF 129.‒   
+                            .fz-12.text-gray CHF 199.‒/Stk 
+
+                      .cart__item-controls.d-flex.align-end.justify-between.w50p
+                        div 
+                          .click-effect-js.d-flex.align-center.fz-10.ls-1-6.lh-24.text-uppercase.favorite.favorite-js.cup.h-main.mb-5 Für später merken
+                            .icon.icon_fill
+                              svg(width="16" height="16")
+                                use(xlink:href='#heart')
+                          .click-effect-js.d-flex.align-center.fz-10.ls-1-6.lh-24.text-uppercase.cup.h-main Für später merken
+                            .icon.icon_fill
+                              svg(width="16" height="16")
+                                use(xlink:href='#trash')
+
+                      .counter.counter-js.d-flex.align-stretch
+                        .counter__trash.d-flex.align-center.justify-center.bordered-lgc.h-main.click-effect-js
+                          .icon.icon_fill
+                            svg(width="16" height="16")
+                              use(xlink:href='#trash')
+
+                        span.minus.bordered-lgc.fw-500.click-effect-js  
+                          .icon -
+                        input(type='text' value='1' min="1").bordered-lgc.text-center.fw-500
+                        span.plus.bordered-lgc.fw-500.click-effect-js 
+                          .icon +
+
+                .cart__delivery.p-25
+                  .d-flex.justify-between
+                    .cart__delivery-item
+
+                      include includes/select
+                      +select
+                        +option('Lieferung','select-id-1')  
+                        +option('Lieferung & Montage','select-id-2')  
+                        +option('Selbstabholung','select-id-3')
+
+                    .cart__delivery-item
+                      .fz-14.mb-10 Die geschätzte Lieferzeit richtet sich <br> nach Ihrem Standort.
+
+                      .cart__delivery-location-trigger.d-flex.align-center.cup.fw-bold.location-trigger-js
+                        span Lieferzeit berechnen
+                        .icon
+                          svg(width="14" height="14")
+                            use(xlink:href='#angle')
+                      
+                      .cart__delivery-location.mt-20
+                        .input.input_icon-right-bordered
+                          label(for="location") PLZ/Ort
+                          input#location(type="text" name="location" placeholder="PLZ/Ort" onfocus="this.placeholder=''" onblur="this.placeholder='PLZ/Ort'")       
+
+                          .icon.icon_stroke
+                            svg(width="24" height="24")
+                              use(xlink:href='#loc')
+                    .cart__delivery-item
+                      .fz-12.text-gray Lieferkosten + CHF 129.‒
+
+                p.fz-14.text-gray.mt-25.mb-25 Gratis Postversand ab CHF 99,- Bestellwert, bei Lieferung mit XXXL Spedition entfallen die Kosten für Postversand.
+
+              .cols__col   
+                .cols__total.mb-10 
+                  .title.title_h2.mt-10.mb-25 Zusammenfassung
+                  
+                  .cols__total-item.border-top-lgc.pt-15.pb-25
+                    ul 
+                      li.d-flex.justify-between
+                        span.fz-14 Warenwert  
+                        span.fz-14.text-right CHF 199.‒  
+                      li.d-flex.justify-between 
+                        a(href="#").fz-14.text-green.td-undrln.h-tdn Lieferkosten 
+                        span.fz-14.text-green gratis
+
+
+
+                  .cols__total-item.border-top-lgc.pt-15.pb-25
+                    ul 
+                      li.d-flex.justify-between
+                        span.fz-18 Warenwert  
+                        span.fz-18.text-right CHF 199.‒  
+                      li  
+                        span.fz-14 inkl. MwSt.
+
+                  button.btn.btn_accent.w100p.popup-trigger-js(data-name="cart-popup") In den Warenkorb
+                    .icon.icon_fill-white.ml-10
+                      svg
+                        use(xlink:href='#arrow') 
+
+
+
+                .cols__code 
+                  .title.title_h3.mb-25 Gutscheincode 
+                  .input.input_error.mb-25
+                    label(for="code") Gutscheincode
+                    input(type="text" value="" name="code" placeholder="Gutscheincode" onfocus="this.placeholder=''" onblur="this.placeholder='Gutscheincode'")#code 
+
+                    .input__message Lorem, ipsum.   
+                  button.btn.btn_secondary.w100p Gutschein einlösen
+
+
+
+            .line-separate.mt-50.mb-50    
+        include includes/advantages
+            
+
+    
+    include includes/footer
+
+
+  include includes/svg-sprite 
+  include includes/scripts 
+  include includes/range 

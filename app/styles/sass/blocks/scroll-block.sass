@@ -19,7 +19,7 @@
   &::after
     bottom: 0
     background: radial-gradient(farthest-side at 50% 100%,#0000001f,#0000) 0 100%
-  
+
   &.scrolling
     &::before,
     &::after
@@ -32,3 +32,18 @@
 
     &::-webkit-scrollbar
       display: none
+
+.scroll-y
+  overflow-y: auto
+
+  &::-webkit-scrollbar
+    width: rem(5)
+    height: rem(8)
+    background-color: $lgc
+
+  &::-webkit-scrollbar-thumb
+    background-color: $gc
+    border-radius: rem(2.5)
+
+  &::-webkit-scrollbar-thumb:hover
+    background-color: $mc

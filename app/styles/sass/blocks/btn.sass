@@ -13,12 +13,19 @@
   text-decoration: none
   border-radius: rem(1)
   padding: 0 rem(25)
+
+  &_light-gray
+    background: $lgc
+    color: $bc
+
+    &:hover
+      background: rgba($lgc, .5)
   
   &_accent
     background: $mc
 
     &:hover
-      background: #c7000a
+      background: #BB0011
 
   &_secondary
     background: $bc
@@ -43,14 +50,13 @@
         &_fill
           svg
             fill: $wc
-      
 
   &_light
     background: $wc
     color: $bc
 
     &:hover
-      background: $lgc
+      background: #E3E3E3
 
   &_inline
     display: inline-flex
@@ -65,3 +71,16 @@
   height: auto
   margin: 0
   padding: 0
+
+#scroll-top
+  position: fixed
+  bottom: -100%
+  transition: $tr
+  right: rem(15)  
+  pointer-events: none
+  z-index: 99
+  
+  &.show
+    opacity: 1
+    bottom: rem(15)
+    pointer-events: inherit

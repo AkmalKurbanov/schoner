@@ -1,0 +1,16 @@
+mixin select(width)
+  .select.d-if.align-center.justify-between.bordered-lgc(class=width).select-js
+    input.select-input(type="hidden")   
+    .select__selected.d-flex.align-center.justify-between
+      span Lieferung
+      .select__icon.ml-25
+        .icon.icon_fill-black
+          svg(width="18" height="18")
+            use(xlink:href='#angle')  
+
+    .select__dropdown.bordered-lgc
+      block
+mixin option(text, id)
+  .select__option(data-text=text data-id=id)=text
+  
+

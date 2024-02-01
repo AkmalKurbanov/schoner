@@ -1,0 +1,129 @@
+include ../includes/product-slider
+
+.slide-panel.bg-white.popup-js.popup-window-js.close(data-name="product-detail")
+  .slide-panel__top.d-flex.justify-between
+    .title.title_h2.fw-600.ls-0-1.d-flex.align-center.mr-10 Produktdetails
+    .slide-panel__close.radius-100.bg-white.bordered-lgc.d-flex.align-center.justify-center.cup.popup-close-js 
+      .icon.icon_fill   
+        svg(width="24" height="24")
+          use(xlink:href='#close') 
+
+  .slide-panel__content.scroll-y.p-30
+    .mb-40
+      .title.title_h3.mb-15 Produktvorteile
+      ul.ul-list 
+        li Zubehör inklusive: Soft-Close-System
+        li Besonderheiten: individuell planbar, planbar nach Mass, individuelle Inneneinteilung, verschiedene Griffe erhältlich, Arbeitsplattenauswahl, Korpusauswahl, Frontauswahl, verschiedene Arbeitshöhen möglich
+
+    .mb-40
+      .title.title_h3.mb-15 Kundenhinweiseе
+      ul.ul-list
+        li In verschiedenen Farben erhältlich
+        li Lieferhinweis für Endkunden: teilmontiert
+        li Montagehinweis für Endkunden: handwerkliche Begabung
+        li Pflegehinweise: feucht wischen 
+
+    .mb-40
+      .title.title_h3.mb-15 Korpus
+      ul.ul-list
+        li Nachbildung: Flachpressplatte
+
+    .mb-40
+      .title.title_h3.mb-15 Material
+      ul.ul-list
+        li Material: Holzwerkstoff
+        li Holzqualität: Nachbildung
+        li Nachbildung: Flachpressplatte
+        li Oberfläche Kunststoff: matt, Dekorfolie
+
+  .slide-panel__bottom
+    button.btn.btn_secondary.w100p Schliessen  
+
+
+
+.slide-panel.bg-white.popup-js.popup-window-js.close(data-name="service")
+  .slide-panel__top.d-flex.justify-between
+    .title.title_h2.fw-600.ls-0-1.d-flex.align-center.mr-10 Service & Versand
+    .slide-panel__close.radius-100.bg-white.bordered-lgc.d-flex.align-center.justify-center.cup.popup-close-js 
+      .icon.icon_fill   
+        svg(width="24" height="24")
+          use(xlink:href='#close') 
+
+  .slide-panel__content.scroll-y.p-30
+    .mb-40
+      .title.title_h3.mb-15 Zahlungsmöglichkeiten:
+      ul.ul-list 
+        li Kreditkarte
+        li PayPal
+        li Kauf auf Rechnung
+        li TWINT
+
+    .mb-40
+      .title.title_h3.mb-15 Versandarten:
+      ul.ul-list
+        li Postversand: CHF 7,95 (Gratis Postversand ab CHF 99,- Bestellwert)
+        li Zustellung durch unser XXXLutz Serviceteam: CHF 129,- 
+        li Zustellung mit Montage: CHF 129,- + Montagekosten (die Preise für die Montage errechnen sich im Warenkorb) 
+        li Selbstabholung in der Filiale je nach Verfügbarkeit möglich 
+
+      p.text.mt-15 Bei Kombination Postversand und Zustellung ist der Postversand kostenlos.
+
+    .mb-40
+      .title.title_h3.mb-15 Holzdeklaration
+      .text Unter den Produktdetails finden Sie alle Angaben zu Holzart, Holzherkunft sowie den Handelsnamen des Holzes. Die wissenschaftlichen Namen der Holzarten können unter www.holzdeklaration.ch abgefragt werden.
+
+    .mb-40
+      .title.title_h3.mb-15 Postversand:
+      ul.ul-list
+       li Der Versand erfolgt durch die Post CH AG.
+       li Für Postversand zahlen Sie einmalig CHF 7,95. (Gratis Postversand ab CHF 99,- Bestellwert)
+
+  .slide-panel__bottom
+    button.btn.btn_secondary.w100p Schliessen  
+
+
+
+
+.slide-panel.bg-white.popup-js.popup-window-js.close(data-name="cart")
+  .slide-panel__top.d-flex.justify-between
+    .title.title_h2.fw-600.ls-0-1.d-flex.align-center.mr-10 Warenkorb
+    .slide-panel__close.radius-100.bg-white.bordered-lgc.d-flex.align-center.justify-center.cup.popup-close-js 
+      .icon.icon_fill   
+        svg(width="24" height="24")
+          use(xlink:href='#close') 
+
+  .cart.slide-panel__content.scroll-y.p-30
+    .popup-message.popup-message_success.pt-15.pb-15.pl-25.pr-25
+      .d-flex.align-center 
+        .icon.icon_stroke.check.mr-10
+          svg
+            use(xlink:href='#check')
+        .fz-14 1 Artikel wurde hinzugefügt    
+
+    .cart__item.mt-30
+      .d-flex
+        .cart__img.bordered-lgc.d-flex-align-center.justify-center.mr-10
+          img.object-contain-img(src="images/dist/kind-thumb1.webp", alt="")
+        
+        div
+          .mb-5
+            .fz-14.fw-500.mb-5 Novel ARMLEHNSTUHL in Edelstahl Mikrofaser      
+            .fz-12.text-gray Anthrazit, HellgrauBreite/Höhe/Tiefe: 59/89,5/63 cm
+
+          .status.status_orange.bg-white.text-uppercase.ls-1-6.fz-10.fw-500.lh-16.d-if.align-center.justify-center.pl-10.pr-10.text-center WERBUNG 
+
+      .d-flex.align-end.justify-between.mt-25  
+        .fz-15.fw-600 Preis für 1 Stk.:
+        .d-flex.flex-column.align-end.text-right 
+          .fz-12.text-gray.mb-5 statt CHF 299.‒
+          .fz-15.fw-600.text-main CHF 129.‒ 
+
+    button.btn.btn_accent.mb-15.w100p Zum Warenkorb
+    button.btn.btn_bordered-dark.w100p Weiter einkaufen
+
+    +productSlider('Das könnte Sie auch <br> interessieren','','cart')
+
+
+  .slide-panel__bottom
+    button.btn.btn_secondary.w100p Schliessen  
+

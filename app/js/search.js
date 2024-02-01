@@ -5,17 +5,17 @@ $('.input-search-js').on('keyup', function () {
     $(this).parent().removeClass('searching')
   }
 });
-$('.input-search-js').on('focus', function () {
-  $('body').addClass('na-scroll');
+$(document).on('click', '.input-search-js', function () {
+  $('body').addClass('no-scroll');
   $('.main').addClass('hide');
 });
 $('.input-search-js').on('blur', function () {
-  $('body').removeClass('na-scroll');
+  $('body').removeClass('no-scroll');
   $('.main').removeClass('hide')
 });
 
 
-$('.clear-search-js').on('click', function () {
+$(document).on('click', '.clear-search-js', function () {
   $(this).parent().find('.input-search-js').val('');
   $(this).parent().find('.input-search-js').focus();
   $(this).parent().removeClass('searching');

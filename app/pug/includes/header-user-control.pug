@@ -1,16 +1,17 @@
 .user-control.d-flex
   .user-control__item 
-    .icon 
-      svg(width="24" height="24")
-        use(xlink:href='#user')
+    a(href="#").click-effect-js 
+      .icon 
+        svg(width="24" height="24")
+          use(xlink:href='#user')
 
     .user-control__dropdown.user-control__dropdown_profile.bg-white.p-30    
       form(action="") 
         .input.mb-25    
-          input(type="text" placeholder="E-mail")   
+          input(type="text" placeholder="E-mail" autocomplete="username" name="Email")   
 
         .input.input_pass.mb-25    
-          input(type="password" placeholder="Password")    
+          input(type="password" placeholder="Password" autocomplete="current-password" name="Password")    
           .input__pass-icon.input-pass-js
             .icon.icon_stroke
               svg(width="24" height="24")
@@ -57,13 +58,14 @@
                     svg(width="18" height="18")
                       use(xlink:href='#angle') 
 
-        a(href="#").text-black.fz-10.ttu.fw-500.text-uppercase.tdn.h-undrln ABMELDEN     
+        a(href="#").text-black.fz-10.text-uppercase.fw-500.text-uppercase.tdn.h-undrln ABMELDEN     
   
-  .user-control__item 
-    .icon 
-      .user-control__count.bg-main.text-white.fz-10.fw-500.d-flex.align-center.justify-center.text-center 1
-      svg(width="24" height="24")
-        use(xlink:href='#heart') 
+  .user-control__item
+    a(href="#").click-effect-js  
+      .icon 
+        .user-control__count.bg-main.text-white.fz-10.fw-500.d-flex.align-center.justify-center.text-center 1
+        svg(width="24" height="24")
+          use(xlink:href='#heart') 
 
     .user-control__dropdown.bg-white.p-30
       .title.title_h3.mb-20 Meine Favoriten   
@@ -99,7 +101,7 @@
                   .user-control__products-desc 
                     .text-black.fz-14.fw-500.lh-20.mb-5 Novel ARMLEHNSTUHL in Stahl Echtleder
                     .text-gray.fz-12.lh-18 Grau, Schwarz 58/88/59 cm
-                button.btn-reset.cup.h-main
+                button.btn-reset.cup.h-main.click-effect-js
                   .icon.icon_fill
                     svg(width="18" height="18")
                       use(xlink:href='#trash')
@@ -107,11 +109,12 @@
                 .text-black.fz-15.lh-18.fw-500 CHF 299.‒
       button.btn.btn_accent.w100p Zu den Favoriten 
   
-  .user-control__item 
-    .icon 
-      .user-control__count.bg-main.text-white.fz-10.fw-500.d-flex.align-center.justify-center.text-center 1
-      svg(width="24" height="24")
-        use(xlink:href='#cart') 
+  .user-control__item
+    a(href="#").click-effect-js  
+      .icon 
+        .user-control__count.bg-main.text-white.fz-10.fw-500.d-flex.align-center.justify-center.text-center 1
+        svg(width="24" height="24")
+          use(xlink:href='#cart') 
 
     .user-control__dropdown.bg-white.p-30
       .title.title_h3.mb-20 Warenkorb   
@@ -137,7 +140,7 @@
                   .user-control__products-desc 
                     .text-black.fz-14.fw-500.lh-20.mb-5 Novel ARMLEHNSTUHL in Stahl Echtleder
                     .text-gray.fz-12.lh-18 Grau, Schwarz 58/88/59 cm
-                button.btn-reset.cup.h-main
+                button.btn-reset.cup.h-main.click-effect-js
                   .icon.icon_fill
                     svg(width="18" height="18")
                       use(xlink:href='#trash')

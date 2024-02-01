@@ -1,0 +1,27 @@
+.counter
+
+  input
+    height: rem(48)
+    width: rem(150)
+    padding: 0 rem(10)
+
+  &__trash,
+  .plus,
+  .minus
+    max-width: rem(48)
+    min-width: rem(48)
+    width: 100%
+    height: rem(48)
+    @include aic-jcc
+    cursor: pointer
+
+  .plus
+    border-left: none
+
+  &__trash
+    display: none
+
+  &__trash,
+  .minus
+    border-right: none !important
+      

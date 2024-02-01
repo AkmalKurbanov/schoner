@@ -1,0 +1,41 @@
+.order
+  &__step-wrap
+    margin-top: rem(50)
+
+  &__step
+    margin-bottom: rem(12)
+    
+    &:last-child
+      margin-bottom: 0
+
+    &.active
+      .order__step-circle
+        background: $bc
+        color: $wc
+        border-color: $bc
+
+  &__step-count
+    position: relative
+    margin-right: rem(50)
+
+    &::before
+      position: absolute
+      content: ''
+      width: rem(2)
+      height: calc(100% - 40px)
+      top: rem(40)
+      bottom: 0
+      left: 50%
+      transform: translateX(-50%)
+
+  &__step-circle
+    max-width: rem(32)
+    min-width: rem(32)
+    width: 100%
+    height: rem(32)
+    border: rem(2) solid $lgc
+    color: $gc
+
+   
+
+

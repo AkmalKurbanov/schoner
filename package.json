@@ -47,12 +47,13 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
+    "@fancyapps/ui": "^5.0.32",
     "intl-tel-input": "^17.0.19",
     "jquery": "^3.6.2",
     "jquery-lazy": "^1.7.11",
+    "macro-css": "^1.0.5",
     "normalize.css": "^8.0.1",
     "save-dev": "^0.0.1-security",
-    "swiper": "^8.4.5",
-    "macro-css": "^1.0.5"
+    "swiper": "11.0.5"
   }
 }

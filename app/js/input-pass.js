@@ -7,7 +7,7 @@
 
 
 
-$('.input-pass-js').on('click', function (e) {
+$(document).on('click', '.input-pass-js', function (e) {
   $(this).toggleClass('show')
   var $pwd = $(this).parent().find('input');
   if ($pwd.attr('type') === 'password') {

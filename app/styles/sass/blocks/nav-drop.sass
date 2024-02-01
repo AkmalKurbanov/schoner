@@ -6,7 +6,7 @@
   width: 100%
   left: 50%
   transform: translateX(-50%)
-  
+
   @media (max-width: 1500px)
     max-width: rem(1300)
     min-width: rem(1300)
@@ -25,26 +25,36 @@
         padding: rem(16) rem(24)
 
         .icon
-          transform: rotate(-90deg)
+
           svg
             fill: $bc
 
-        // &:hover
-        //   .icon
-        //     svg
-        //       fill: $wc
+        &:hover
+          .icon
+            opacity: 1
+            svg
+              fill: $wc
+
+          .nav-drop__category-img
+            filter: invert(1)
 
       &.current
         a
           background: $mc
           color: $wc
 
+          .icon
+            svg
+              fill: $wc
+              
+        .nav-drop__category-img
+            filter: invert(1)      
+
   &__category-img
     max-width: rem(24)
     min-width: rem(24)
     width: 100%
     height: rem(24)
-    background: $wc
     position: relative
 
   &__subcategory
@@ -89,8 +99,6 @@
 
     &:hover
       box-shadow: 0 1rem .75rem 0 #0000003d,0 1.25rem 2.5rem 0 #0000003d
-
-    
 
     .icon
       width: rem(24)

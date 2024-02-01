@@ -1,0 +1,161 @@
+extends layouts/jq-ui
+
+block vars
+  - var description = '';
+  - var keywords= '';
+  - var ogtitle = '';
+  - var ogtype = '';
+  - var ogurl = '';
+  - var ogimg = '';
+
+block title
+  | Sicher bestellen in 3 Schritten
+block main
+  .wrapper
+    .content
+      include includes/header
+
+      .main
+        include includes/product-slider
+        include includes/breadcrumbs
+        include includes/filter
+        include includes/cart-popup
+        include includes/scroll-top
+
+        .special-order.bg-lgc
+          .special-order__close.cup.special-order-close-js
+            .icon   
+              svg(width="24" height="24")
+                use(xlink:href='#close')
+          .container 
+            .pt-15.pb-15.text-center 
+              p.fz-12.text-black Neu hier? Jetzt Kundenkonto anlegen und viele Vorteile geniessen <br>
+                a(href="#").text-black.fw-500.h-tdn Jetzt registieren
+        
+        .order
+          .container
+            .cols.d-flex
+              .cols__col.pt-30
+                .breadcrumbs.mb-40
+                  ul.d-flex.align-center.flex-wrap
+                    li.d-flex.align-center
+                      a.h-main(href='#')
+                        .icon.icon_fill
+                          svg(width='18' height='18')
+                            use(xlink:href='#home')
+                      .icon.icon_fill
+                        svg(width='18' height='18')
+                          use(xlink:href='#angle-right')      
+                    li.d-flex.align-center
+                      a.fz-10.text-gray.fw-500.text-uppercase.ls-1-6.tdn.h-td-undrln(href='#')
+                        | WARENKORB
+                        span.underline(style='background: rgb(118, 118, 118);')
+                      .icon.icon_fill
+                        svg(width='18' height='18')
+                          use(xlink:href='#angle-right')      
+                
+                .title.title_h1.mb-30 Sicher bestellen in 3 Schritten
+                p.fz-14.text-gray Alle mit * markierten Felder sind Pflichtfelder. 
+
+                .order__step-wrap
+                  .order__step.active
+                    .d-flex.align-stretch
+                      .order__step-count 
+                        .order__step-circle.radius-100.fz-14.fw-500.d-flex.align-center.justify-center 1 
+                      
+                      .order__step-content
+                        .title.title_h2.mb-30 Liefer- & Rechnungsadresse
+
+                        .d-flex.mb-40
+                          .icon.icon_stroke.mr-10
+                            svg(width="24" height="24")
+                              use(xlink:href='#info') 
+                          p.fz-14.mr-10 Sie sind als kaldybaevtv@gmail.com angemeldet und können Ihre gespeicherten Daten für die Bestellung verwenden.
+
+                
+              .cols__col   
+                .cols__total.mb-10
+                  .d-flex.align-center.justify-between.mt-10.mb-25
+                    .title.title_h3 Warenkorb
+                    a(href="#").fz-10.text-uppercase.td-undrln.h-tdn.text-main Bearbeiten 
+                  .cart__item.mt-30
+                    .d-flex
+                      .cart__img.bordered-lgc.d-flex-align-center.justify-center.mr-10
+                        img.object-contain-img(src='images/dist/kind-thumb1.webp' alt='')
+                      div
+                        .status.status_orange.bg-white.text-uppercase.ls-1-6.fz-10.fw-500.lh-16.d-if.align-center.justify-center.pl-10.pr-10.text-center.mb-5 WERBUNG 
+                        .mb-5
+                          .fz-14.fw-500.mb-5 Novel ARMLEHNSTUHL in Stahl Echtleder      
+                          .fz-12.text-gray Grau, Schwarz 58/88/59 cm
+                    .d-flex.align-end.justify-between.mt-25
+                      .fz-15.fw-600 Preis für 1 Stk.:
+                      .d-flex.flex-column.align-end.text-right
+                        .fz-15.fw-600 CHF 129.‒ 
+
+                  
+                  .cols__total-item.border-top-lgc.pt-15.pb-25
+                    ul 
+                      li.d-flex.justify-between
+                        span.fz-14.fw-bold Postversand  
+
+                      li.d-flex.justify-between  
+                        span.fz-14.text-gray Lieferzeit 6 Werktage 1232 Confignon
+
+
+                  .cols__total-item.border-top-lgc.pt-15.pb-25
+                    ul 
+                      li.d-flex.justify-between
+                        span.fz-14 Warenwert  
+                        span.fz-14.text-right.fw-500 CHF 199.‒  
+                      li.d-flex.justify-between 
+                        a(href="#").fz-14.text-green.td-undrln.h-tdn Lieferkosten 
+                        span.fz-14.text-green gratis
+
+
+
+                  .cols__total-item.border-top-lgc.pt-15.pb-25
+                    ul 
+                      li.d-flex.justify-between
+                        span.fz-18.fw-500 Gesamtsumme  
+                        span.fz-18.text-right.fw-500 CHF 199.‒  
+                      li  
+                        span.fz-14 inkl. MwSt.
+                  .text.fz-14.mb-25 Mit Ihrer Bestellung erklären Sie sich mit unseren 
+                    a(href="#") AGB
+                    | und 
+                    a(href="#") Widerrufsbelehrung
+                    | einverstanden.
+
+                  .line-separate.mt-25.mb-25
+                  
+                  .d-flex.justify-around
+                    each item,index in ['Click & Collect','Gratis <br> Transporter', 'Montageservice <br> bei Lieferung']
+                      .d-flex.align-center.flex-column
+                        svg(width="40" height="40").mb-10
+                          use(xlink:href='#step'+(index + 1))
+                        
+                        .fz-12.text-gray.text-center!=item
+
+
+                .cols__code 
+                  .title.title_h3.mb-25 Gutscheincode 
+                  .input.input_error.mb-25
+                    label(for="code") Gutscheincode
+                    input(type="text" value="" name="code" placeholder="Gutscheincode" onfocus="this.placeholder=''" onblur="this.placeholder='Gutscheincode'")#code 
+
+                    .input__message Lorem, ipsum.   
+                  button.btn.btn_secondary.w100p Gutschein einlösen
+
+
+
+            .line-separate.mt-50.mb-50    
+        include includes/advantages
+            
+
+    
+    include includes/footer
+
+
+  include includes/svg-sprite 
+  include includes/scripts 
+  include includes/range 

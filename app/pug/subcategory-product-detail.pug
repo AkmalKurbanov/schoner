@@ -1,0 +1,156 @@
+extends layouts/jq-ui
+
+block vars
+  - var description = '';
+  - var keywords= '';
+  - var ogtitle = '';
+  - var ogtype = '';
+  - var ogurl = '';
+  - var ogimg = '';
+
+block title
+  | Subcategory product detail | MODERNE EINBAUKÜCHEN 
+block main
+  .wrapper
+    .content
+      include includes/header
+
+      .main
+        include includes/special-order
+        include includes/product-slider
+        include includes/breadcrumbs
+        include includes/filter
+        include includes/product-detail-popup
+        include includes/scroll-top
+
+        +breadcrumbs('Produkte','Einbauküchen','MODERNE EINBAUKÜCHEN')
+        
+        .product-detail.mt-45
+          .container
+            .d-flex.justify-between
+              .product-detail__slider
+                .gallery-container
+                  .product-detail__main-wrap.pos-r
+
+                    .product-detail__hidden-list.kind-js
+                        each item in [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+                          .product-detail__hidden-item(data-id="kind"+item)
+                            img.object-contain-img(src="images/dist/kind"+item+".webp", alt="")
+
+
+                    .swiper-container.gallery-main.bordered-lgc.o-hidden
+                      .swiper-wrapper
+                        each item in [1,2,3,4,5,6,7,8]
+                          .swiper-slide
+                            a(data-src='images/dist/product-detail'+item+".webp" data-fancybox="gallery").gallery-main__item
+                              img.object-contain-img(src='images/dist/product-detail'+item+".webp" alt='Slide 0'+item)
+                  .product-detail__thumb-wrap.pos-r
+                    .swiper-container.gallery-thumbs
+                      .swiper-wrapper
+                        each item in [1,2,3,4,5,6,7,8]
+                          .swiper-slide
+                            .gallery-thumbs__item.bordered-lgc
+                              img.object-contain-img(src='images/dist/detail-thumb'+item+".webp" alt='Thumb 0'+item)
+                          
+                        //- .swiper-pagination
+                    .swiper-button-prev.thumb-prev
+                    .swiper-button-next.thumb-next
+
+                .share.d-flex.align-center
+                  .fz-14.text-gray.mr-15 Produkt jetzt teilen:
+                  ul.d-flex.align-center 
+                    each item in ['telegram','twitter','whatsapp','instagram','facebook','linkedIn','youtube','pinterest','tiktok']
+                      li.h-main 
+                        a(href="#") 
+                          .icon.icon_stroke
+                            svg(width="20" height="20")
+                              use(xlink:href='#'+item)
+                    li.email.h-main
+                      a(href="#") 
+                        .icon.icon_fill
+                          svg(width="20" height="20")
+                            use(xlink:href='#envelope')    
+              
+              .product-detail__info-block
+                .fz-14.text-gray.mb-5 Artikelnr. 1566047204
+                .title.title_h1.mb-15 Novel ARMLEHNSTUHL in 
+                  span.fw-400 Edelstahl Mikrofaser
+                .fz-14.text-gray.mb-10 Anthrazit, HellgrauBreite/Höhe/Tiefe: 59/89,5/63 cm
+
+                .status.status_orange.bg-white.text-uppercase.ls-1-6.fz-10.fw-500.lh-16.d-if.align-center.justify-center.pl-10.pr-10.text-center WERBUNG
+                
+                .mt-30 
+                  p statt CHF 299.‒
+                  .fz-28.text-main.fw-500 CHF 199.‒ 
+                  .fz-14.text-orange.mb-5 Sie sparen 33%.
+
+                  .d-flex.mb-15
+                    .fz-12.text-gray Inkl. MwSt.
+                    a(href="#").tdn.h-undrln.fz-12.text-gray Kostenloser Versand
+
+                  .fz-10.text-gray.lh-15 Nicht mit anderen Aktionen (zB.: Gutscheinen und Rabattaktionen) <br> kumulierbar. Gültig bis 12.11.2023
+
+                .line-separate.mt-25.mb-25
+
+                .product-detail__kinds.d-flex.align-start.flex-wrap.kind-thumb-js
+                  each item in [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+                    .product-detail__kinds-col
+                      if item == 1
+                        .product-detail__kinds-item.active.bordered-lgc(data-id="kind"+item)
+                          img.object-contain-img(src="images/dist/kind-thumb"+item+".webp", alt="")
+                      else
+                        a(href="#" data-id="kind"+item).product-detail__kinds-item.bordered-lgc
+                          img.object-contain-img(src="images/dist/kind-thumb"+item+".webp", alt="")
+                
+                .line-separate.mt-25.mb-25
+
+                .d-flex.mb-30
+                  p Mehr von:
+                  a(href="#").fw-500.text-black.ml-5.h-tdn.td-undrln Dieter Knoll 
+
+                .d-flex.mb-30
+                  button.favorite.favorite-js.click-effect-js.btn-reset.cup.h-main.bordered-lgc.pl-10.pr-10
+                    .icon.icon_fill
+                      svg(width="24" height="24")
+                        use(xlink:href='#heart')
+
+                  button.btn.btn_accent.ml-15.w100p.click-effect-js.popup-trigger-js(data-name="cart") In den Warenkorb
+                    .icon.icon_fill.icon_fill-white.ml-5
+                      svg(width="20" height="20")
+                        use(xlink:href='#cart') 
+                
+                .d-flex.justify-around.mb-40 
+                  each item,index in ['Click & Collect','Gratis <br> Transporter', 'Montageservice <br> bei Lieferung']
+                    .d-flex.align-center.flex-column
+                      svg(width="40" height="40").mb-10
+                        use(xlink:href='#step'+(index + 1))
+                      
+                      .fz-12.text-gray.text-center!=item
+
+                
+                ul 
+                  li.cup.d-flex.align-center.justify-between.border-bottom-lgc.pt-25.pb-25.popup-trigger-js(data-name="product-detail") 
+                    .fz-18.fw-500 Sortierung
+                    .icon.ml-10
+                      svg
+                        use(xlink:href='#angle-right')
+                  li.cup.d-flex.align-center.justify-between.border-bottom-lgc.pt-25.pb-25.popup-trigger-js(data-name="service") 
+                    .fz-18.fw-500 Service & Versand
+                    .icon.ml-10
+                      svg
+                        use(xlink:href='#angle-right')
+
+            
+
+        +productSlider('Optisch ähnliche Artikel')  
+        +productSlider('Das könnte Ihnen auch gefallen')  
+        +productSlider('Andere Kunden kauften auch')  
+
+       
+    
+    include includes/footer
+
+
+  include includes/svg-sprite 
+  include includes/scripts 
+  include includes/range 

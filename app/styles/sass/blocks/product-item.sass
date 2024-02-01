@@ -1,17 +1,36 @@
+.product-wrap
+  margin-left: rem(-12)
+  margin-right: rem(-12)
+  @include fww
+  
+  .product-wrap__col
+    padding: 0 rem(12)
+    margin-bottom: rem(24)
+
+  .product-item
+    height: 100%
+
+    &__img,
+    &__hidden-img,
+    &__hidden-img-list
+      height: rem(244)
+      max-width: rem(244)
+      min-width: rem(244)
+      width: 100%
+    
+
+
 .product-item
   border: rem(1) solid $lgc
   position: relative
 
-  &__favorite
+  .favorite.favorite-js.click-effect-js
     position: absolute
     top: rem(15)
     right: rem(15)
     z-index: 1
 
-    &.active
-      .icon
-        svg
-          fill: $mc
+    
 
   &__link
     position: absolute
@@ -24,6 +43,9 @@
 
   &__hidden-img
     display: none
+
+  &__img
+    @include aic-jcc
 
   &__img,
   &__hidden-img,
@@ -82,6 +104,7 @@
 
     ul
       li
+        position: relative
         a
           max-width: rem(36)
           min-width: rem(36)
@@ -93,6 +116,17 @@
         &:last-child
           padding-right: 0!important
 
+  &__thumbs-more
+    position: absolute
+    @include aic-jcc
+    top: 0
+    right: 0
+    bottom: 0
+    width: 100%
+    height: 100%
+    background: $wc
+    pointer-events: none
+
 .status
   border-width: rem(1)
   border-style: solid
@@ -102,3 +136,7 @@
   &_orange
     border-color: #F6A800
     color: #f6a800
+    
+  &_red
+    border-color: $mc
+    color: $mc
